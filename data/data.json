@@ -1,0 +1,14 @@
+{
+  "sns": [
+    {
+      "service": "GitHub",
+      "name": "ntnyq",
+      "url": "https://github.com/ntnyq"
+    },
+    {
+      "service": "Twitter",
+      "name": "ntnyq",
+      "url": "https://twitter.com/ntnyq"
+    }
+  ]
+}
