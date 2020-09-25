@@ -38,7 +38,15 @@
   "prettier": "@ntnyq/prettier-config",
   "eslintConfig": {
     "extends": [
-      "@ntnyq/prettier-typescript-react"
+      "@ntnyq/prettier"
+    ],
+    "overrides": [
+      {
+        "files": [
+          "**/*.ts?(x)"
+        ],
+        "extends": "@ntnyq/prettier-typescript-react"
+      }
     ],
     "root": true
   },

@@ -12,7 +12,8 @@
     "target": "ESNEXT",
     "module": "ESNEXT",
     "moduleResolution": "node",
-    "allowJs": false,
+    "allowJs": true,
+    "checkJs": false,
     "sourceMap": true,
     "removeComments": false,
     "forceConsistentCasingInFileNames": true,
@@ -24,6 +25,7 @@
     "types": []
   },
   "include": [
+    "gatsby-config.js",
     "src/**/*.ts",
     "src/**/*.tsx"
   ],
