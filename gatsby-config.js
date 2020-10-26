@@ -51,12 +51,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `ntnyq's site`,
-        short_name: `site`,
+        name: `Ntnyq's site`,
+        short_name: `Ntnyq' site`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
-        display: `minimal-ui`,
+        display: `standalone`,
         icon: resolve(`static/images/avatar.jpg`), // This path is relative to the root of the site.
       },
     },
