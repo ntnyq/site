@@ -6,7 +6,7 @@ const resolve = (...args) => path.resolve(__dirname, ...args)
 module.exports = {
   siteMetadata: {
     title: `ntnyq`,
-    description: `ntnyq's site`,
+    description: `ntnyq`,
     author: `ntnyq`,
   },
 
@@ -51,8 +51,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Ntnyq's site`,
-        short_name: `Ntnyq' site`,
+        name: `ntnyq`,
+        short_name: `ntnyq`,
         start_url: `/`,
         background_color: `#663399`,
         theme_color: `#663399`,
@@ -63,7 +63,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: 'UA-172996934-1',
+        trackingId: `UA-172996934-1`,
       },
     },
     `gatsby-plugin-offline`,
