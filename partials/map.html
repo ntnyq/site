@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, width=device-width">
+  <title>ntnyq.com - map</title>
+  <style>
+    html,
+    body,
+    #container {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .amap-logo,
+    .amap-toolbar,
+    .amap-copyright {
+      display: none !important;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="container"></div>
+  <script src="https://webapi.amap.com/maps?v=1.4.15&key=3fd367ad19a9adf8cc31beadb1fcdf8a"></script>
+  <script>
+    var map = new AMap.Map('container', {
+      resizeEnabled: true,
+      center: [108.88000, 34.22667],
+      zoom: 10
+    })
+
+    map.setLang('zh_CN')
+
+    var contextMenu = new AMap.ContextMenu()
+
+    contextMenu.addItem('放大一级', function() {
+      map.zoomIn()
+    }, 0)
+
+    contextMenu.addItem('缩小一级', function() {
+      map.zoomOut()
+    }, 0)
+
+    contextMenu.addItem('缩至全国', function() {
+      map.setZoomAndCenter(4, [108.946609, 34.262324])
+    })
+
+    map.on('rightclick', function(evt) {
+      contextMenu.open(map, evt.lnglat)
+    })
+
+    var marker = new AMap.Marker({
+      position: map.getCenter(),
+      draggable: false,
+      cursor: 'move'
+    })
+
+    map.setMapStyle('default')
+    marker.setMap(map)
+    marker.setAnimation('AMAP_ANIMATION_BOUNCE')
+  </script>
+</body>
+
+</html>
