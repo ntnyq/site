@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[3],{Tgqd:function(n,t,o){"use strict";o.d(t,"a",(function(){return e}));var r=o("Lnxd");function e(n){return Object(r.a)({tag:"svg",attr:{viewBox:"0 0 24 24",fill:"none",stroke:"currentColor",strokeWidth:"2",strokeLinecap:"round",strokeLinejoin:"round"},child:[{tag:"polyline",attr:{points:"7 13 12 18 17 13"}},{tag:"polyline",attr:{points:"7 6 12 11 17 6"}}]})(n)}}}]);
+//# sourceMappingURL=5e2a4920-c16d52abd5cccb84fe16.js.map
