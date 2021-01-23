@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import ReactJkMusicPlayer, {
+import VideoPlayer from '../AudioPlayer'
+import type {
+  ReactJkMusicPlayerLocale,
   ReactJkMusicPlayerAudioListProps,
 } from 'react-jinke-music-player'
-import 'react-jinke-music-player/assets/index.css'
 import { DataJson } from '../../../generated-types/gatsby-graphql'
 import {
   Container as ContainerComponent,
@@ -51,6 +52,20 @@ const Hero: React.FC = () => {
   const {
     dataJson: { sns, audioLists },
   } = useStaticQuery<{ dataJson: DataJson }>(query)
+  const options = {
+    locale: 'zh_CN' as ReactJkMusicPlayerLocale,
+    defaultVolume: 0.5,
+    defaultPosition: { left: 20, bottom: 20 },
+    drag: false,
+    glassBg: true,
+    autoPlay: false,
+    toggleMode: true,
+    showLyric: false,
+    showDestroy: false,
+    showDownload: false,
+    showThemeSwitch: false,
+    audioLists: audioLists as ReactJkMusicPlayerAudioListProps[],
+  }
 
   return (
     <Container>
@@ -62,22 +77,7 @@ const Hero: React.FC = () => {
           </Button>
         ))}
       </Buttons>
-      {audioLists && (
-        <ReactJkMusicPlayer
-          locale='zh_CN'
-          defaultVolume={0.5}
-          defaultPosition={{ left: 20, bottom: 20 }}
-          drag={false}
-          glassBg={true}
-          autoPlay={false}
-          toggleMode={true}
-          showLyric={false}
-          showDestroy={false}
-          showDownload={false}
-          showThemeSwitch={false}
-          audioLists={audioLists as ReactJkMusicPlayerAudioListProps[]}
-        />
-      )}
+      {audioLists && <VideoPlayer options={options} />}
     </Container>
   )
 }

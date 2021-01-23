@@ -53,6 +53,7 @@
     "root": true
   },
   "dependencies": {
+    "@loadable/component": "^5.14.1",
     "gatsby": "^2.31.1",
     "gatsby-image": "^2.10.0",
     "gatsby-plugin-google-analytics": "^2.10.0",
@@ -77,6 +78,7 @@
   "devDependencies": {
     "@ntnyq/eslint-config-prettier-typescript-react": "^0.1.12",
     "@ntnyq/prettier-config": "^0.2.0",
+    "@types/loadable__component": "^5.13.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
     "@types/react-helmet": "^6.0.0",
