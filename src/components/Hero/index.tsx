@@ -1,10 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useStaticQuery, graphql } from 'gatsby'
-import { Container, Button as ButtonComponent } from '../Common'
+import ReactJkMusicPlayer, {
+  ReactJkMusicPlayerAudioListProps,
+} from 'react-jinke-music-player'
+import 'react-jinke-music-player/assets/index.css'
 import { DataJson } from '../../../generated-types/gatsby-graphql'
+import {
+  Container as ContainerComponent,
+  Button as ButtonComponent,
+} from '../Common'
 
-const Box = styled(Container)`
+const Container = styled(ContainerComponent)`
   flex-direction: column;
 `
 
@@ -30,16 +37,23 @@ const query = graphql`
         service
         url
       }
+      audioLists {
+        name
+        cover
+        singer
+        musicSrc
+      }
     }
   }
 `
 
 const Hero: React.FC = () => {
   const {
-    dataJson: { sns },
+    dataJson: { sns, audioLists },
   } = useStaticQuery<{ dataJson: DataJson }>(query)
+
   return (
-    <Box>
+    <Container>
       <h1>Hello world</h1>
       <Buttons>
         {sns?.map((item, idx) => (
@@ -48,7 +62,23 @@ const Hero: React.FC = () => {
           </Button>
         ))}
       </Buttons>
-    </Box>
+      {audioLists && (
+        <ReactJkMusicPlayer
+          locale='zh_CN'
+          defaultVolume={0.5}
+          defaultPosition={{ left: 20, bottom: 20 }}
+          drag={false}
+          glassBg={true}
+          autoPlay={false}
+          toggleMode={true}
+          showLyric={false}
+          showDestroy={false}
+          showDownload={false}
+          showThemeSwitch={false}
+          audioLists={audioLists as ReactJkMusicPlayerAudioListProps[]}
+        />
+      )}
+    </Container>
   )
 }
 
